@@ -1,0 +1,208 @@
+﻿@model Clinic_1.Models.Appointment
+<style>
+    con {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    .container {
+        border-radius: 5px;
+        background-color: whitesmoke;
+        padding: 20px;
+    }
+
+    .gap {
+        position: relative;
+        width: 100%;
+        font-size: small;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+    }
+</style>
+
+<body style="background-color: #c1dad6">
+    <centre>
+        <br />
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                <img src="~/Images/Stone-Clinic-Logo.png" width="60" height="60" />&nbsp; &nbsp;
+                <h1 class="m-0 text-secondary"><span class="text-primary">Stone</span>&nbsp;Clinic</h1>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+
+                <a class="navbar-brand  " asp-action="Show" asp-controller="Home"><Span class=" btn btn-primary py-2 px-4 d-none d-lg-block">HOME</Span></a>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                MENU
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="AddDoctor" asp-controller="Home">Add Doctor</a>
+                                <a class="dropdown-item alert-primary badge-secondary" asp-action="AddPatient" asp-controller="Home">Add Patient</a>
+                                @*<div class="dropdown-divider"></div>*@
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="Appointment" asp-controller="Home">Appointment</a>
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="CancelAppoint" asp-controller="Home">Cancel</a>
+                                <div class="">
+                                    <a class="dropdown-item alert-dark badge-danger" asp-action="Login" asp-controller="Home">Log Out</a>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </nav>
+        </header>
+</body>
+<br />
+<br />
+<div class="container-fluid bg-light con">
+    <div class="row py-2 px-lg-3 ">
+        @*<img src="~/Image/doctor_logo.jpg" width="60" height="60" />*@
+        <h2 class="m-0 text-secondary"><span class="text-primary"> Make </span>Appointment </h2>
+    </div>
+</div>
+<br />
+<br />
+<div>
+    <table class="table">
+        @using (Html.BeginForm("AppointmentList", "Home", FormMethod.Post))
+        {
+
+            <tr>
+                <th>
+                    @Html.DisplayName("PatientID")
+                </th>
+                <td style="background-color:gray">
+                    @Html.TextBoxFor(modelItem => Model.PatientID, new { required = "required" })
+                    @*@Html.TextBoxFor(model => Model.PatientID)*@
+                </td>
+            </tr>
+            <tr>
+        <th>
+            @Html.DisplayName("PatientName")
+        </th>
+        <td style="background-color:gray">
+            @Html.TextBoxFor(modelItem => Model.PatientName, new { required = "required" })
+            </td>
+        </tr>
+            <tr>
+                <th>
+                    @Html.DisplayName("Specialization")
+                </th>
+                <th style="background-color:gray">
+
+                    <select name="Specialization">
+                        <option value="Select Specialization">Select Specialization</option>
+                        <option value="General">General</option>
+                        <option value="Internal Medicine">Internal Medicine</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Ophthalmology">Ophthalmology</option>
+                    </select>
+
+
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayName("Doctor")
+                </th>
+                <th style="background-color:gray">
+                    @*<label>Doctor List</label>*@
+                    <select name="Doctor">
+                        <option value="Select Doctor">Select Doctor</option>
+                        <option value="Rukesh">Rukesh</option>
+                        <option value="Kavi">Kavi</option>
+                        <option value="Nithin">Nithin</option>
+                    </select>
+
+
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayName("VisitDate")
+                </th>
+                <td style="background-color:gray">
+                    &nbsp;&nbsp;
+                    <input asp-for="VisitDate" type="date" required />
+                    <span asp-validation-for="VisitDate" class="text-danger"></span>
+                    @*@Html.TextBoxFor(model => Model.VisitDate)*@
+                    @*<input type="date" value="VisitDate">*@
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayName("Time")
+                </th>
+                <th style="background-color:gray">
+                    <select name="AppointmentTime">
+                        <option value="Visting Hours">Visiting Hours</option>
+                        <option value="10.00 AM-11.00 AM">10.00 AM-11.00 AM</option>
+                        <option value="11.00 AM-12.00 PM">11.00 AM-12.00 PM</option>
+                        <option value="03.00 PM-04.00 PM">03.00 PM-04.00 PM</option>
+                        <option value="04.00 PM-05.00 PM">04.00 PM-05.00 PM</option>
+                    </select>
+                </th>
+                @*<td style="background-color:gray">
+
+                    Select Your Visiting Time  :<br />
+                        @Html.RadioButtonFor(model => Model.AppointmentTime, "10.00 AM-11.00 AM")<span> 10.00 AM-11.00 AM |</span>
+                        @Html.RadioButtonFor(model => Model.AppointmentTime, "11.00 AM-12.00 PM")<span> 11.00 AM-12.00 AM | </span>
+                        @Html.RadioButtonFor(model => Model.AppointmentTime, "2.00 PM-3.00 PM")<span> 2.00 PM-3.00 AM | </span>
+                        @Html.RadioButtonFor(model => Model.AppointmentTime, "3.00 PM-4.00 PM") <span> 3.00 AM-4.00 AM | </span>
+                </td>*@
+            </tr>
+            <tr>
+                <td align="center" colspan="2" rowspan="3">
+
+                    <input type="submit" value="Create" class="btn btn-primary py-2 px-4 d-none d-lg-block" />
+
+                </td>
+            </tr>
+
+            <tbody>
+            </tbody>
+
+
+        }
+    </table>
+</div>
+@*<div style="background-color:black" class="gap">
+        <p style="color:whitesmoke">&copy;Copyright 2022.All Rights Reserved &nbsp; &nbsp;|&nbsp;&nbsp;<span style="color:red">Stone Clinic</span></p>
+    </div>*@
+<footer class="container-fluid">
+    <div style="background-color:black" class="gap">
+        <p style="color:whitesmoke">&copy;Copyright 2022.All Rights Reserved &nbsp; &nbsp;|&nbsp;&nbsp;<span style="color:red">Stone Clinic</span></p>
+    </div>
+</footer>
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("VisitDate")[0].setAttribute('min', today);
+</script>
+
+
+

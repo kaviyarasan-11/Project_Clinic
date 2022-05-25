@@ -1,0 +1,249 @@
+﻿<style>
+    con {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    .container {
+        border-radius: 5px;
+        background-color: whitesmoke;
+        padding: 20px;
+    }
+
+    .gap {
+        position: relative;
+        width: 100%;
+        font-size: small;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+    }
+</style>
+<body style="background-color: #c1dad6">
+    <centre>
+        <br />
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                <img src="~/Images/Stone-Clinic-Logo.png" width="60" height="60" />&nbsp; &nbsp;
+                <h1 class="m-0 text-secondary"><span class="text-primary">Stone</span>&nbsp;Clinic</h1>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+
+                <a class="navbar-brand  " asp-action="Show" asp-controller="Home"><Span class=" btn btn-primary py-2 px-4 d-none d-lg-block">HOME</Span></a>
+
+
+                <div class="collapse navbar-collapse" >
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  "  role="button" data-toggle="dropdown" aria-haspopup="true">
+                                MENU
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="AddDoctor" asp-controller="Home">Add Doctor</a>
+                                <a class="dropdown-item alert-primary badge-secondary" asp-action="AddPatient" asp-controller="Home">Add Patient</a>
+                                @*<div class="dropdown-divider"></div>*@
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="Appointment" asp-controller="Home">Appointment</a>
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="CancelAppoint" asp-controller="Home">Cancel</a>
+                                <div class="">
+                                    <a class="dropdown-item alert-dark badge-danger" asp-action="Login" asp-controller="Home">Log Out</a>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </nav>
+        </header>
+</body>
+<br />
+<!--<div class="container-fluid bg-light con">
+    <div class="row py-2 px-lg-3 ">-->
+@*<img src="~/Image/doctor_logo.jpg" width="60" height="60" />*@
+<!--<h2 class="m-0 text-secondary"><span class="text-primary">ABOUT </span></h2>
+    </div>
+</div>-->
+
+<br />
+<br />
+
+<body>
+
+
+    <center><img src="~/Images/Mediacal.jpg" width="600" height="350" /></center>
+    <div>
+        <h2>
+            <b>The Stone Clinic Method:<b />
+        </h2>
+        <br />
+        <p style="font-style:italic " ;>
+            <b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>The Stone Clinic is unlike most other orthopaedic clinics. Our biologic approach makes us different.</b>
+
+        </p>
+        <p style="color:dimgrey">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  We regenerate and rebuild, rather than replace with metals and plastics. We take a biologic approach to treating joint injuries and arthritis, preserving as much of the natural biology of the joint as possible, often rebuilding with donor tissue, in order to avoid or delay a joint replacement.
+
+            In this new <b>“anabolic era”<b /> of joint repair, we can stimulate and augment the body’s own natural healing response using injections of growth factors derived from biologic sources.
+        </p>
+        <h2>
+            <b>Pioneering surgeon:<b />
+        </h2>
+        <br />
+        <p style="color:dimgrey">
+            @*<center>
+                    <img src="~/Images/doctor-character.png" width="50" height="70" style="" />
+                </center>*@
+            World-renowned orthopaedic surgeon, <b>Kevin R. Stone<b />, MD, leads the clinic. He is passionate about improving surgical techniques and finding new ways to speed up healing.
+        </p>
+        <br />
+        <h2>
+            Physical rehabilitation, an integral part of our practice:
+        </h2>
+        <br />
+        <p style="color:dimgrey">
+            We fix the person, not just the joint. By integrating physical rehabilitation into our practice we <b>
+                help patients heal faster<b />. Our onsite rehab team carefully coordinates a comprehensive treatment program and tailors it to fit your
+                lifestyle and activity goals. Our goal is to have our patients return to activity fitter, faster, and stronger than they were before they were injured. Everybody at the clinic works passionately to ensure that happens.
+        </p>
+        <br />
+        <h2>
+            Everything in one place:
+        </h2>
+        <br />
+        <center>
+            <img src="~/Images/Hospital_2jpg.jpg" width="400" height="250" />
+        </center>
+        <p style="color:dimgrey">
+
+            We’re set up to handle every step of your care from diagnosis, to outpatient surgery (if you need it) to onsite physical rehabilitation. No more bouncing from place to place. The clinic offers same-day onsite diagnosis with a complete <b>
+                physical exam,
+                in-office digital x-ray, and extremity MRI, <b />if necessary.
+        </p>
+        <br />
+        <h2>
+            Changing the arthritis paradigm:
+        </h2>
+        <br />
+        <p style="color:dimgrey">
+            The way we see it, the current standard of care for osteoarthritis is failing patients. Being told to “stop your activities, take pain killers and wait until you need a joint replacement” is outdated and unacceptable. It is possible to repair and prevent
+            some types of osteoarthritis. For more than 25 years, The Stone Clinic has used<b> bioactive factors and tissue-engineering <b />procedures to treat cartilage damage and correct the cause of arthritic wear.
+        </p>
+        <br />
+        <h2>
+            Our pioneering spirit:
+        </h2>
+        <br />
+        <p style="color:dimgrey">
+            We simply do not settle for doing things the way they have always been done in orthopaedic surgery. We are driven to innovate: to invent tools to make surgery more efficient, to design more effective procedures, and to find ways to accelerate the healing process.
+            We strive constantly to improve our patients’ experience.
+        </p>
+        <center>
+            <img src="~/Images/Mediacal Team.jpg" width="600" height="350" />
+        </center>
+
+    </div>
+</body>
+<footer class="container-fluid">
+    <div style="background-color:black" class="gap">
+        <p style="color:whitesmoke">&copy;Copyright 2022.All Rights Reserved &nbsp; &nbsp;|&nbsp;&nbsp;<span style="color:red">Stone Clinic</span></p>
+    </div>
+</footer>
+@*</body>*@
+@*<div style="background-color:black" class="gap">
+        <p style="color:whitesmoke">&copy;Copyright 2022.All Rights Reserved &nbsp; &nbsp;|&nbsp;&nbsp;<span style="color:red">Stone Clinic</span></p>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<body style="background-image: url('https://www.stoneclinic.com/sites/default/files/default_images/TSC-Header_0.jpg' ) ">*@
+<!--<body style="background-color: #c1dad6">
+    <centre>
+        <br />
+        <br />
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                <img src="~/Images/Stone-Clinic-Logo.png" width="60" height="60" />&nbsp; &nbsp;
+                <h1 class="m-0 text-secondary"><span class="text-primary">Stone</span>&nbsp;Clininc</h1>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+
+                <a class="navbar-brand" asp-action="About" asp-controller="Home"><Span>About</Span></a>-->
+@*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>*@
+
+<!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">-->
+@*<li class="nav-item active">
+        <a class="nav-link" ><span class="sr-only">(current)</span></a>
+    </li>*@
+<!--<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+        Show
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" asp-action="AddDoctor" asp-controller="Home">Add Doctor</a>
+        <a class="dropdown-item" asp-action="AddPatient" asp-controller="Home">Add Patient</a>-->
+@*<div class="dropdown-divider"></div>*@
+<!--<a class="dropdown-item" asp-action="Appointment" asp-controller="Home">Appointment</a>
+                                <a class="dropdown-item" asp-action="CancelAppoint" asp-controller="Home">Cancel</a>
+                                <div class="alert-danger">
+                                    <a class="dropdown-item" asp-action="Login" asp-controller="Home">Log Out</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+</body>-->

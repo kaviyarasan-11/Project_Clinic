@@ -1,0 +1,197 @@
+﻿@model Clinic_1.Models.Staff
+<head>
+    <script src="@Url.Content("~/Content/Style.css")" rel="stylesheet" type="text/css"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+    @*<nav >
+        <div>
+            <center><h2>Clinic Adminstration</h2></center>
+        </div>
+    </nav>*@
+    
+</head>
+@*<body style="background-image: url(https://wallpapers-hub.art/wallpaper-images/537594.jpg) ">*@
+<body style="background-image: url(https://img.freepik.com/free-vector/blue-molecules-background-science-medical-healthcare_1017-15000.jpg?size=626&ext=jpg&ga=GA1.2.637151853.1652366701); ">
+    @*<body style="background-image: url(https://www.vecteezy.com/vector-art/109448-medical-background-vector) ">*@
+        <center><h2> </h2></center>
+        @using (Html.BeginForm("Verify", "Home", FormMethod.Post))
+        {
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <img src="~/Images/Stone-Clinic-Logo.png" width="60" height="60" />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        <h1 class="m-0 text-secondary"><span class="text-danger">Clinic</span>&nbsp;Adminstration</h1>
+    </nav>
+</header>
+    <br/>
+               <center> <div class="form-box" style="background-color: #d5ebff ">
+                    <table class="table" >
+                        @*<center><h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" >  LOGIN </h3></center>*@
+
+                        <tr>
+                            <td align="center" colspan="2" rowspan="1">
+                                @*<img src="~/Images/Login_0.jpeg" width="80" height="80" />*@
+                                @*<img src="~/Images/Login-4.png" width="80" height="80" />*@
+
+                                <img src="~/Images/Log.jpg" width="70" height="70"/>
+                                @*<img src="~/Images/login-5.jpeg"  />*@
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <th>
+                                @Html.DisplayName("UserName")
+                            </th>
+                            <th>
+                                @*&nbsp;&nbsp;<input asp-for="UserName" class="form-control" placeholder="UserName" pattern="[A-Za-z]+" title="Special characters Not Allowed" />*@
+                                @Html.TextBoxFor(modelItem => Model.UserName, new { required = "required" })
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                @Html.DisplayName("Password")
+                            </th>
+                            <th>
+                                @Html.PasswordFor(modelItem => Model.Password, new { required = "required" })
+                                @*&nbsp;&nbsp;<input asp-for="UserName" class="form-control" placeholder="UserName" pattern="[A-Za-z]+" title="Special characters Not Allowed" />*@
+                            </th>
+                        </tr>
+                        <hr />
+                        <tr>
+                            <td align="center" colspan="2" rowspan="2">
+                                <input type="submit" value="Log In" class="badge-secondary" />
+                                @*&nbsp;&nbsp;<input asp-for="UserName" class="form-control" placeholder="UserName" pattern="[A-Za-z]+" title="Special characters Not Allowed" />*@
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+
+
+
+                </div>
+    </center>}
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<head>
+                <link href="~/css/site.css" rel="stylesheet" />
+            </head>
+            <body style="background-image: url(https://wallpapercave.com/wp/wp2528652.jpg) ">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+
+                    @using (Html.BeginForm("Verify", "Home", FormMethod.Post))
+                    {
+            <div class="form-box">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayName("UserName")
+                        </th>
+                        <td>
+                            @Html.EditorFor(modelItem => Model.UserName)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Password")
+                        </th>
+                        <td>
+                            @Html.PasswordFor(modelItem => Model.Password)
+                        </td>
+                    </tr>
+                </table>
+
+                    <div class="login-box">
+                        <center><input type="button" value="Login"></center>
+                    </div>
+
+
+
+
+            </div>
+
+
+
+                    }
+
+
+
+
+        </body>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

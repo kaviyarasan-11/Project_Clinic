@@ -1,0 +1,328 @@
+﻿@model IEnumerable<Clinic_1.Models.Doctor>
+<style>
+    footer {
+        position: relative;
+        width: 100%;
+        font-size: small;
+        left: 0;
+        bottom: 0;
+        text-align: left;
+        background-color: darkgrey;
+    }
+
+    .centred {
+        position: relative;
+        width: 100%;
+        font-size: small;
+        left: 0;
+        bottom: 0;
+        text-align: right;
+    }
+
+    .gap {
+        position: relative;
+        width: 100%;
+        font-size: small;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+    }
+
+    #gap {
+        position: relative;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        background-color: black;
+        font-size: small;
+    }
+
+    .con {
+        /* position: fixed;
+        width: 100%;
+        font-size: small;
+        left: 0;
+        bottom: 0;*/
+        text-align: center;
+    }
+
+    .tab-align {
+        border-block: solid;
+        border-right: solid;
+        border-left: solid;
+        border-inline: solid;
+        border-bottom: solid;
+        border-inline-start: solid;
+        border-block-start: solid;
+    }
+
+    #con {
+        text-align: center;
+    }
+
+    .container {
+        position: inherit;
+        text-align: left;
+        color: white;
+        border-radius: 5px;
+        background-color: whitesmoke;
+        padding: 20px;
+    }
+
+    .centered {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .social {
+        color: black;
+        font-family: cursive;
+        font-size: 30px;
+    }
+</style>
+<body style="background-color: #c1dad6">
+    <centre>
+        <br />
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                <img src="~/Images/Stone-Clinic-Logo.png" width="60" height="60" />&nbsp; &nbsp;
+                <h1 class="m-0 text-secondary"><span class="text-primary">Stone</span>&nbsp;Clinic</h1>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+
+                <a class="navbar-brand  " asp-action="Show" asp-controller="Home"><Span class="  btn btn-primary py-2 px-4 d-none d-lg-block">Home</Span></a>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                MENU
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="AddDoctor" asp-controller="Home">Add Doctor</a>
+                                <a class="dropdown-item alert-primary badge-secondary" asp-action="AddPatient" asp-controller="Home">Add Patient</a>
+                                @*<div class="dropdown-divider"></div>*@
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="Appointment" asp-controller="Home">Appointment</a>
+                                <a class="dropdown-item  alert-primary badge-secondary" asp-action="CancelAppoint" asp-controller="Home">Cancel</a>
+                                <div class="">
+                                    <a class="dropdown-item alert-dark badge-danger" asp-action="Login" asp-controller="Home">Log Out</a>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </nav>
+        </header>
+</body>
+<br />
+<br />
+
+<div class="container-fluid bg-light con">
+    <div class="row py-2 px-lg-3 ">
+        @*<img src="~/Image/doctor_logo.jpg" width="60" height="60" />*@
+        <h2 class="m-0 text-secondary"><span class="text-primary ">Doctors</span>List</h2>
+    </div>
+</div>
+<br />
+<br />
+<div>
+    <table class="table tab-align">
+        <tr>
+            <th>
+                @Html.DisplayName("DoctorID")
+            </th>
+            <th>
+                @Html.DisplayName("FirstName")
+            </th>
+            <th>
+                @Html.DisplayName("LastName")
+            </th>
+            <th>
+                @Html.DisplayName("Sex")
+            </th>
+            <th>
+                @Html.DisplayName("Specialization")
+            </th>
+        </tr>
+        <div>
+            @foreach (var item in Model)
+            { 
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.DoctorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Specialization)
+            </td>
+        </tr>
+            }
+        </div>
+    </table>
+    
+</div>
+   
+    <footer class="container-fluid">
+        <div style="background-color:black" class="gap">
+            <p style="color:whitesmoke">&copy;Copyright 2022.All Rights Reserved &nbsp; &nbsp;|&nbsp;&nbsp;<span style="color:red">Stone Clinic</span></p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<div>
+        <table class="table tab-align">
+            <tr>
+                <th>
+                    @Html.DisplayName("DoctorID")
+                </th>
+                <th>
+                    @Html.DisplayName("FirstName")
+                </th>
+                <th>
+                    @Html.DisplayName("LastName")
+                </th>
+                <th>
+                    @Html.DisplayName("Sex")
+                </th>
+                <th>
+                    @Html.DisplayName("Specialization")
+                </th>
+            </tr>
+
+        </table>
+    </div>
+    <br />
+    <br />
+
+    <div class="container-fluid bg-light con">
+        <div class="row py-2 px-lg-3 ">-->
+    @*<img src="~/Image/doctor_logo.jpg" width="60" height="60" />*@
+    <!--<h2 class="m-0 text-secondary"><span class="text-primary "> Pediatrics</span></h2>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        <table class="table tab-align">
+            <tr>
+                <th>
+                    @Html.DisplayName("DoctorID")
+                </th>
+                <th>
+                    @Html.DisplayName("FirstName")
+                </th>
+                <th>
+                    @Html.DisplayName("LastName")
+                </th>
+                <th>
+                    @Html.DisplayName("Sex")
+                </th>
+                <th>
+                    @Html.DisplayName("Specialization")
+                </th>
+            </tr>
+
+        </table>
+    </div>
+    <br />
+    <br />
+    <div class="container-fluid bg-light con">
+        <div class="row py-2 px-lg-3 ">-->
+    @*<img src="~/Image/doctor_logo.jpg" width="60" height="60" />*@
+    <!--<h2 class="m-0 text-secondary"><span class="text-primary "> Orthopedics</span></h2>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        <table class="table tab-align">
+            <tr>
+                <th>
+                    @Html.DisplayName("DoctorID")
+                </th>
+                <th>
+                    @Html.DisplayName("FirstName")
+                </th>
+                <th>
+                    @Html.DisplayName("LastName")
+                </th>
+                <th>
+                    @Html.DisplayName("Sex")
+                </th>
+                <th>
+                    @Html.DisplayName("Specialization")
+                </th>
+            </tr>
+
+        </table>
+    </div>
+    <br />
+    <br />
+
+    <div class="container-fluid bg-light con">
+        <div class="row py-2 px-lg-3 ">-->
+    @*<img src="~/Image/doctor_logo.jpg" width="60" height="60" />*@
+    <!--<h2 class="m-0 text-secondary"><span class="text-primary ">Ophthalmology</span></h2>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        <table class="table tab-align">
+            <tr>
+                <th>
+                    @Html.DisplayName("DoctorID")
+                </th>
+                <th>
+                    @Html.DisplayName("FirstName")
+                </th>
+                <th>
+                    @Html.DisplayName("LastName")
+                </th>
+                <th>
+                    @Html.DisplayName("Sex")
+                </th>
+                <th>
+                    @Html.DisplayName("Specialization")
+                </th>
+            </tr>
+
+        </table>
+    </div>-->
+   
+
